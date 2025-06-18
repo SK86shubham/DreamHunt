@@ -58,6 +58,7 @@ DreamHunt/
 📸 Screenshots
 <!-- Add screenshots of UI here -->
 Home Page
+![phome](https://github.com/user-attachments/assets/3a30533d-5929-4d8b-8f64-dea6ee0d1c74)
 
 
 
