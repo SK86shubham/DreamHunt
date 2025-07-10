@@ -30,7 +30,7 @@ app.use(express.urlencoded({urlencoded:true}));
 app.use(cookieParser());
 
 const corsOption={
-     origin:'http://localhost:5173',
+     origin:'https://dreamhunt.onrender.com',
     credentials:true
 }
 app.use(cors(corsOption));
