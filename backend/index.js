@@ -7,17 +7,22 @@ import userRoute from "./routes/user.route.js"
 import companyRoute from "./routes/company.route.js"
 import jobRoute from "./routes/job.route.js"
 import appRoute from "./routes/application.route.js"
+import path from "path";
+
 
 dotenv.config({});
 
 const app=express();
 
-app.get("/home",(req,res)=>{
-    return res.status(200).json({
-        message:"i am coming from backkend",
-        success:true
-    })
-})
+// app.get("/home",(req,res)=>{
+//     return res.status(200).json({
+//         message:"i am coming from backkend",
+//         success:true
+//     })
+// })
+
+//forntend to backend me serve kr rhe hai
+const _dirname=path.resolve();
 
 //middleware
 app.use(express.json());
@@ -43,8 +48,15 @@ app.use("/api/v1/applicant",appRoute);
 // http://localhost:8000/api/v1/user/"register"
 // http://localhost:8000/api/v1/user/"login"
 
+app.use(express.static(path.join(_dirname,"/fronted/dist")));
+// app.get('*',(req,res)=>{
+//     res.sendFile(path.resolve(_dirname,"fronted","dist","index.html"));
+// });
+
 app.listen(PORT,()=>{
     connectDB();
     console.log(`server running at port ${PORT}`);
     
 })
+
+
